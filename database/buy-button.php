@@ -20,4 +20,4 @@ if ($good['Discount_price'] > 0) {
 
 mysqli_query($connection, "INSERT INTO `Cart` (`ID`, `AccountID`, `GoodID`, `Date`, `cost`) VALUES (NULL, '$AccountID', '$GoodID', '$date', '$cost')");
 
-header("location:javascript://history.go(-1)");
+if (isset($AccountID)) header("location:javascript://history.go(-1)");

@@ -32,9 +32,9 @@ $Premium_have = mysqli_fetch_assoc($Premium_have)['PremiumCount'];
                 </h3>
                 Email - <?= $_SESSION['user']['Email'] ?>
                 <br>
-                Balance - <?= $Balance_have ?>$
+                Balance - <?= $Balance_have ?> D-coins
                 <br>
-                PremiumCount - <?= $Premium_have ?>
+                PremiumCount - <?= $Premium_have ?> Days
             </div>
             <div class="profile-buttons">
                 <a class="logout-b" href="database/logout.php">Logout</a>

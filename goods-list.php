@@ -5,9 +5,6 @@
 </form>
 
 <main class="main-shop">
-    <!-- <div class="slider-main">
-                <div class="slider-show"></div>
-            </div> -->
     <ul class="main-list">
         <?php
         foreach ($goodsFetch as $item) {
