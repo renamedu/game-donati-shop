@@ -1,8 +1,8 @@
 <?php
     session_start();
-    require_once 'connection.php';
+    require_once 'database/connection.php';
 
-    if ($_SESSION['user']) {
+    if (isset($_SESSION['user'])) {
         header('Location: profile.php');
     };
 ?>
@@ -21,19 +21,14 @@
     <?php require 'header.php'?>
     <div class="main-back">
         <div class="login-back">
-            <form class="login-form" action="signup.php" method="POST">
+            <form class="login-form" action="database/signup.php" method="POST">
                 <input name="username" type="text" placeholder="Username">
                 <input name="email" type="text" placeholder="Email">
                 <input name="password" type="password" placeholder="Password">
                 <input name="password_confirm" type="password" placeholder="Confirm password">
                 <button type="submit">Sign up!</button>
                 <a href="login.php">Login</a>
-                <?php 
-                    if ($_SESSION['message']) {
-                        echo $_SESSION['message'];
-                    };
-                    unset($_SESSION['message']);
-                ?>
+                <?php require_once 'database/loginMessage.php'?>
             </form>
         </div>
     </div>

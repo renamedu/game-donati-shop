@@ -1,6 +1,5 @@
 <?php
-session_start();
-require_once 'connection.php';
+require_once 'database/connection.php';
 ?>
 
 <nav class="header-nav">
@@ -12,7 +11,7 @@ require_once 'connection.php';
     <div class="profile-info">
         <a href="login.php" class="main-profile">
             <?php
-                if ($_SESSION['user']) {
+                if (isset($_SESSION['user'])) {
                     print_r($_SESSION['user']['Username']);
                 } else {
                     ?>

@@ -1,8 +1,8 @@
 <?php
-require 'connection.php';
+session_start();
+require 'database/connection.php';
 $id = $_GET["id"];
-$item = mysqli_query($connection, "SELECT * FROM `goods` WHERE `ID` = $id");
-$item = mysqli_fetch_assoc($item);
+$item = mysqli_fetch_assoc(mysqli_query($connection, "SELECT * FROM `goods` WHERE `ID` = $id"));
 ?>
 
 <!DOCTYPE html>
@@ -43,7 +43,7 @@ $item = mysqli_fetch_assoc($item);
                 <?php
                 }
                 ?>
-                <form action="buy-button.php" method="GET">
+                <form action="database/buy-button.php" method="GET">
                     <input type="hidden" name="id" value="<?= $item['ID'] ?>">
                     <button type="submit" class="item-buy-button">Buy</button>
                 </form>

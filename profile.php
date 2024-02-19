@@ -1,10 +1,8 @@
 <?php
 session_start();
-require_once 'connection.php';
+require_once 'database/connection.php';
+require_once 'database/authCheck.php';
 
-if (!$_SESSION['user']) {
-    header('Location: login.php');
-};
 $ID = $_SESSION['user']['ID'];
 
 $Balance_have = mysqli_query($connection, "SELECT `Balance` from `Account` WHERE `Account`.`ID` = '$ID'");
@@ -39,8 +37,8 @@ $Premium_have = mysqli_fetch_assoc($Premium_have)['PremiumCount'];
                 PremiumCount - <?= $Premium_have ?>
             </div>
             <div class="profile-buttons">
-                <a class="logout-b" href="logout.php">Logout</a>
-                <a class="delete-b" href="delete-account.php">Delete account</a>
+                <a class="logout-b" href="database/logout.php">Logout</a>
+                <a class="delete-b" href="database/delete-account.php">Delete account</a>
             </div>
         </div>
     </div>

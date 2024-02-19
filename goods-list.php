@@ -36,7 +36,7 @@
                         <?php
                         }
                         ?>
-                        <form action="buy-button.php" method="GET">
+                        <form action="database/buy-button.php" method="GET">
                             <input type="hidden" name="id" value="<?= $item[0] ?>">
                             <button type="submit" class="el-buy">Buy</button>
                         </form>

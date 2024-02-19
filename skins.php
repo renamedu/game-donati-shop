@@ -1,13 +1,7 @@
 <?php
-require 'connection.php';
-if ($_GET['sort'] == 'price-up') {
-    $goods = mysqli_query($connection, "SELECT * FROM `goods` WHERE `Section` = 'Skin' ORDER BY `goods`.`Price` ASC");
-} elseif ($_GET['sort'] == 'price-down') {
-    $goods = mysqli_query($connection, "SELECT * FROM `goods` WHERE `Section` = 'Skin' ORDER BY `goods`.`Price` DESC");
-} else {
-    $goods = mysqli_query($connection, "SELECT * FROM `goods` WHERE `Section` = 'Skin' ORDER BY `goods`.`Rating` DESC");
-}
-$goodsFetch = mysqli_fetch_all($goods);
+session_start();
+require 'database/connection.php';
+require 'database/sortCheck.php';
 ?>
 
 
