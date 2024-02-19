@@ -22,5 +22,3 @@ mysqli_query($connection, "UPDATE `Account` SET `PremiumCount` = '$Total_premium
 mysqli_query($connection, "DELETE FROM `Cart` WHERE `Cart`.`AccountID` = '$ID'");
 
 header("location: ../index.php");
-
-?>
